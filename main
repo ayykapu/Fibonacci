@@ -1,0 +1,41 @@
+using System;
+namespace Fib
+{
+    class Cl1
+    {
+        static void Main(string[] args)
+        {
+            int wyraz2 = 0;
+            int wyraz1 = 0;
+            Console.WriteLine("Podaj ile wyrazów ciązu Fibonnaciego ma wypisać program: ");
+            int numberInput = int.Parse(Console.ReadLine());
+            Console.Clear();
+
+            for (int i = 0; i < numberInput; i++)
+            {
+                Console.WriteLine(wyraz2);
+                if (wyraz2 == 0)
+                {
+                    wyraz2++;
+                }
+                else
+                {
+                    int temp = wyraz2; //utworzenie zmiennej temp i przypisanie do niej wartosci wyrazenia drugiego
+                    //po pierwszym cyklu: temp = wyraz2 = 1
+                    //po drugim cyklu: temp = wyraz2 = 1
+                    //po trzecim cyklu: temp = wyraz2 = 2
+                    wyraz2 = wyraz1 + wyraz2; // dodanie wyrazenia poprzednego do drugiego
+                    //po pierwszym cyklu: wyraz2 = 1 + wyraz1 (0)
+                    //po drugim cyklu: wyraz 2 = 1 + wyraz1 (1) = 2
+                    //po trzecim cyklu: wyraz 2 = 2 + wyraz1 (1) = 3
+                    wyraz1 = temp; // przypisanie wartosci temp(wyrazenia drugiego) do wyrazenia piewrszego
+                    //po pierwszym cyklu: wyraz2 = 1 = temp
+                    //po drugim cyklu: wyraz2 = 2 = temp
+                    //po trzecim cyklu: wyraz2 = 3 = temp
+
+                }
+            }
+            Console.ReadLine();
+        }
+    }
+}
